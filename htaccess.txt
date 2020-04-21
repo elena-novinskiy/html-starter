@@ -1,0 +1,10 @@
+#RENAME FILE TO .htaccess WHEN UPLOADING TO SERVER
+#CHANGE mywebsite.com TO YOUR DOMAIN NAME
+
+#Comment | Force all URLs to https WITHOUT www
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://mywebsite.com/$1 [R,L]
+
+#Comment | Force all URLs to https WITH www
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.mywebsite.com/$1 [R,L]
